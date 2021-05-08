@@ -1,0 +1,51 @@
+12:14:20.525480 == Info:   Trying 127.0.0.1:23921...
+12:14:20.567961 == Info: Connected to 127.0.0.1 (127.0.0.1) port 23921 (#0)
+12:14:20.586830 => Send header, 180 bytes (0xb4)
+0000: GET /1700 HTTP/1.1
+0014: Host: 127.0.0.1:23921
+002b: User-Agent: curl/7.77.0-DEV
+0048: Accept: */*
+0055: Connection: Upgrade, HTTP2-Settings
+007a: Upgrade: h2c
+0088: HTTP2-Settings: AAMAAABkAAQCAAAAAAIAAAAA
+00b2: 
+12:14:20.602866 == Info: Mark bundle as not supporting multiuse
+12:14:20.606111 <= Recv header, 34 bytes (0x22)
+0000: HTTP/1.1 101 Switching Protocols
+12:14:20.611170 <= Recv header, 21 bytes (0x15)
+0000: Connection: Upgrade
+12:14:20.611825 <= Recv header, 14 bytes (0xe)
+0000: Upgrade: h2c
+12:14:20.612256 == Info: Received 101
+12:14:20.622847 == Info: Using HTTP2, server supports multi-use
+12:14:20.623214 == Info: Connection state changed (HTTP/2 confirmed)
+12:14:20.633714 == Info: Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=172
+12:14:20.699200 == Info: Empty reply from server
+12:14:20.704770 == Info: Connection #0 to host 127.0.0.1 left intact
+12:14:20.722167 == Info: Found bundle for host 127.0.0.1: 0x52b17b0 [can multiplex]
+12:14:20.728961 == Info: Re-using existing connection! (#0) with host 127.0.0.1
+12:14:20.730109 == Info: Connected to 127.0.0.1 (127.0.0.1) port 23921 (#0)
+12:14:20.740895 == Info: Using Stream ID: 3 (easy handle 0x52c86c0)
+12:14:20.755243 => Send header, 89 bytes (0x59)
+0000: GET /17000001 HTTP/2
+0016: Host: 127.0.0.1:23921
+002d: user-agent: curl/7.77.0-DEV
+004a: accept: */*
+0057: 
+12:14:20.760030 <= Recv header, 13 bytes (0xd)
+0000: HTTP/2 200 
+12:14:20.760548 <= Recv header, 37 bytes (0x25)
+0000: date: Tue, 09 Nov 2010 14:49:00 GMT
+12:14:20.761717 <= Recv header, 19 bytes (0x13)
+0000: content-length: 6
+12:14:20.762964 <= Recv header, 25 bytes (0x19)
+0000: content-type: text/html
+12:14:20.763158 <= Recv header, 17 bytes (0x11)
+0000: server: nghttpx
+12:14:20.763299 <= Recv header, 18 bytes (0x12)
+0000: via: 1.1 nghttpx
+12:14:20.764487 <= Recv header, 2 bytes (0x2)
+0000: 
+12:14:20.765634 <= Recv data, 6 bytes (0x6)
+0000: -maa-.
+12:14:20.769602 == Info: Connection #0 to host 127.0.0.1 left intact

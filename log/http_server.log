@@ -1,0 +1,48 @@
+12:14:17.419643 Running HTTP IPv4 version on port 44555
+12:14:17.419955 Wrote pid 15688 to .http_server.pid
+12:14:17.419988 Wrote port 44555 to .http_server.port
+12:14:18.418725 ====> Client connect
+12:14:18.418746 accept_connection 3 returned 4
+12:14:18.418758 accept_connection 3 returned 0
+12:14:18.418770 Read 97 bytes
+12:14:18.418777 Process 97 bytes request
+12:14:18.418790 Got request: GET /verifiedserver HTTP/1.1
+12:14:18.418798 Are-we-friendly question received
+12:14:18.418817 Wrote request (97 bytes) input to log/server.input
+12:14:18.418836 Identifying ourselves as friends
+12:14:18.418886 Response sent (56 bytes) and written to log/server.response
+12:14:18.418897 special request received, no persistency
+12:14:18.418904 ====> Client disconnect 0
+12:14:20.586799 ====> Client connect
+12:14:20.586829 accept_connection 3 returned 4
+12:14:20.586847 accept_connection 3 returned 0
+12:14:20.586966 Read 130 bytes
+12:14:20.587004 Process 130 bytes request
+12:14:20.587047 Got request: GET /1700 HTTP/1.1
+12:14:20.587058 Requested test number 1700 part 0
+12:14:20.587103 - request found to be complete (1700)
+12:14:20.587151 Wrote request (130 bytes) input to log/server.input
+12:14:20.587177 Send response test1700 section <data>
+12:14:20.587328 Response sent (256 bytes) and written to log/server.response
+12:14:20.587342 => persistent connection request ended, awaits new request
+
+12:14:20.587437 Connection closed by client
+12:14:20.587453 ====> Client disconnect 0
+12:14:20.753007 ====> Client connect
+12:14:20.753054 accept_connection 3 returned 4
+12:14:20.753071 accept_connection 3 returned 0
+12:14:20.753088 Read 132 bytes
+12:14:20.753099 Process 132 bytes request
+12:14:20.753114 Got request: GET /17000001 HTTP/1.1
+12:14:20.753125 Requested test number 1700 part 1
+12:14:20.753160 - request found to be complete (1700)
+12:14:20.753195 Wrote request (132 bytes) input to log/server.input
+12:14:20.753211 Send response test1700 section <data1>
+12:14:20.753356 Response sent (119 bytes) and written to log/server.response
+12:14:20.753371 => persistent connection request ended, awaits new request
+
+12:14:20.753434 Connection closed by client
+12:14:20.753447 ====> Client disconnect 0
+12:14:20.840436 exit_signal_handler: 15
+12:14:20.840498 signalled to die
+12:14:20.840578 ========> IPv4 sws (port 44555 pid: 15688) exits with signal (15)

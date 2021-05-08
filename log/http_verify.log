@@ -1,0 +1,13 @@
+*   Trying 127.0.0.1:44555...
+* Connected to 127.0.0.1 (127.0.0.1) port 44555 (#0)
+> GET /verifiedserver HTTP/1.1
+> Host: 127.0.0.1:44555
+> User-Agent: curl/7.77.0-DEV
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Length: 17
+< 
+{ [17 bytes data]
+* Connection #0 to host 127.0.0.1 left intact

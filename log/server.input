@@ -1,0 +1,14 @@
+GET /1700 HTTP/1.1
+Host: 127.0.0.1:23921
+User-Agent: curl/7.77.0-DEV
+Accept: */*
+X-Forwarded-Proto: http
+Via: 1.1 nghttpx
+
+GET /17000001 HTTP/1.1
+Host: 127.0.0.1:23921
+User-Agent: curl/7.77.0-DEV
+Accept: */*
+X-Forwarded-Proto: http
+Via: 2 nghttpx
+
