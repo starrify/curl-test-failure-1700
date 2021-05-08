@@ -1,0 +1,307 @@
+srcdir=. /usr/bin/perl -I. ./runtests.pl -a -p -r 1700
+********* System characteristics ******** 
+* curl 7.77.0-DEV (x86_64-pc-linux-gnu) 
+* libcurl/7.77.0-DEV OpenSSL/1.1.1f libidn2/2.2.0 nghttp2/1.40.0 libgsasl/1.8.1
+* Features: alt-svc AsynchDNS gsasl HSTS HTTP2 HTTPS-proxy IDN IPv6 Largefile NTLM NTLM_WB SSL TLS-SRP UnixSockets
+* Disabled: 
+* Host: 1a100808e8f5
+* System: Linux 1a100808e8f5 5.11.14-arch1-1 #1 SMP PREEMPT Wed, 14 Apr 2021 12:06:34 +0000 x86_64 x86_64 x86_64 GNU/Linux
+* OS: linux
+* Servers: SSL HTTP-IPv6 HTTP-unix FTP-IPv6 
+* Env: Valgrind 
+* Seed: 224325
+***************************************** 
+test 1700...[HTTP/2 GET with Upgrade:]
+
+ 1700: stdout FAILED:
+--- log/check-expected	2021-05-08 12:14:20.726283240 +0000
++++ log/check-generated	2021-05-08 12:14:20.726283240 +0000
+@@ -4,17 +4,6 @@
+ [CR][LF]
+ HTTP/2 200 [CR][LF]
+ date: Tue, 09 Nov 2010 14:49:00 GMT[CR][LF]
+-last-modified: Tue, 13 Jun 2000 12:10:00 GMT[CR][LF]
+-etag: "21025-dc7-39462498"[CR][LF]
+-accept-ranges: bytes[CR][LF]
+-content-length: 6[CR][LF]
+-content-type: text/html[CR][LF]
+-funny-head: yesyes[CR][LF]
+-via: 1.1 nghttpx[CR][LF]
+-[CR][LF]
+--foo-[LF]
+-HTTP/2 200 [CR][LF]
+-date: Tue, 09 Nov 2010 14:49:00 GMT[CR][LF]
+ content-length: 6[CR][LF]
+ content-type: text/html[CR][LF]
+ via: 1.1 nghttpx[CR][LF]
+== Contents of files in the log/ dir after test 1700
+=== Start of file check-expected
+ HTTP/1.1 101 Switching Protocols[CR][LF]
+ Connection: Upgrade[CR][LF]
+ Upgrade: h2c[CR][LF]
+ [CR][LF]
+ HTTP/2 200 [CR][LF]
+ date: Tue, 09 Nov 2010 14:49:00 GMT[CR][LF]
+ last-modified: Tue, 13 Jun 2000 12:10:00 GMT[CR][LF]
+ etag: "21025-dc7-39462498"[CR][LF]
+ accept-ranges: bytes[CR][LF]
+ content-length: 6[CR][LF]
+ content-type: text/html[CR][LF]
+ funny-head: yesyes[CR][LF]
+ via: 1.1 nghttpx[CR][LF]
+ [CR][LF]
+ -foo-[LF]
+ HTTP/2 200 [CR][LF]
+ date: Tue, 09 Nov 2010 14:49:00 GMT[CR][LF]
+ content-length: 6[CR][LF]
+ content-type: text/html[CR][LF]
+ via: 1.1 nghttpx[CR][LF]
+ [CR][LF]
+ -maa-[LF]
+=== End of file check-expected
+=== Start of file check-generated
+ HTTP/1.1 101 Switching Protocols[CR][LF]
+ Connection: Upgrade[CR][LF]
+ Upgrade: h2c[CR][LF]
+ [CR][LF]
+ HTTP/2 200 [CR][LF]
+ date: Tue, 09 Nov 2010 14:49:00 GMT[CR][LF]
+ content-length: 6[CR][LF]
+ content-type: text/html[CR][LF]
+ via: 1.1 nghttpx[CR][LF]
+ [CR][LF]
+ -maa-[LF]
+=== End of file check-generated
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/valgrind1700 ../src/curl --include --trace-ascii log/trace1700 --trace-time http://127.0.0.1:23921/1700 --http2 http://127.0.0.1:23921/17000001 >log/stdout1700 2>log/stderr1700
+=== End of file commands.log
+=== Start of file ftpserver.cmd
+ Testnum 1700
+=== End of file ftpserver.cmd
+=== Start of file http_server.log
+ 12:14:17.419643 Running HTTP IPv4 version on port 44555
+ 12:14:17.419955 Wrote pid 15688 to .http_server.pid
+ 12:14:17.419988 Wrote port 44555 to .http_server.port
+ 12:14:18.418725 ====> Client connect
+ 12:14:18.418746 accept_connection 3 returned 4
+ 12:14:18.418758 accept_connection 3 returned 0
+ 12:14:18.418770 Read 97 bytes
+ 12:14:18.418777 Process 97 bytes request
+ 12:14:18.418790 Got request: GET /verifiedserver HTTP/1.1
+ 12:14:18.418798 Are-we-friendly question received
+ 12:14:18.418817 Wrote request (97 bytes) input to log/server.input
+ 12:14:18.418836 Identifying ourselves as friends
+ 12:14:18.418886 Response sent (56 bytes) and written to log/server.response
+ 12:14:18.418897 special request received, no persistency
+ 12:14:18.418904 ====> Client disconnect 0
+ 12:14:20.586799 ====> Client connect
+ 12:14:20.586829 accept_connection 3 returned 4
+ 12:14:20.586847 accept_connection 3 returned 0
+ 12:14:20.586966 Read 130 bytes
+ 12:14:20.587004 Process 130 bytes request
+ 12:14:20.587047 Got request: GET /1700 HTTP/1.1
+ 12:14:20.587058 Requested test number 1700 part 0
+ 12:14:20.587103 - request found to be complete (1700)
+ 12:14:20.587151 Wrote request (130 bytes) input to log/server.input
+ 12:14:20.587177 Send response test1700 section <data>
+ 12:14:20.587328 Response sent (256 bytes) and written to log/server.response
+ 12:14:20.587342 => persistent connection request ended, awaits new request
+ 12:14:20.587437 Connection closed by client
+ 12:14:20.587453 ====> Client disconnect 0
+ 12:14:20.753007 ====> Client connect
+ 12:14:20.753054 accept_connection 3 returned 4
+ 12:14:20.753071 accept_connection 3 returned 0
+ 12:14:20.753088 Read 132 bytes
+ 12:14:20.753099 Process 132 bytes request
+ 12:14:20.753114 Got request: GET /17000001 HTTP/1.1
+ 12:14:20.753125 Requested test number 1700 part 1
+ 12:14:20.753160 - request found to be complete (1700)
+ 12:14:20.753195 Wrote request (132 bytes) input to log/server.input
+ 12:14:20.753211 Send response test1700 section <data1>
+ 12:14:20.753356 Response sent (119 bytes) and written to log/server.response
+ 12:14:20.753371 => persistent connection request ended, awaits new request
+ 12:14:20.753434 Connection closed by client
+ 12:14:20.753447 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:44555...
+ * Connected to 127.0.0.1 (127.0.0.1) port 44555 (#0)
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:44555
+ > User-Agent: curl/7.77.0-DEV
+ > Accept: */*
+ > 
+ * Mark bundle as not supporting multiuse
+ < HTTP/1.1 200 OK
+ < Content-Length: 17
+ < 
+ { [17 bytes data]
+ * Connection #0 to host 127.0.0.1 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 15688
+=== End of file http_verify.out
+=== Start of file server.input
+ GET /1700 HTTP/1.1
+ Host: 127.0.0.1:23921
+ User-Agent: curl/7.77.0-DEV
+ Accept: */*
+ X-Forwarded-Proto: http
+ Via: 1.1 nghttpx
+ GET /17000001 HTTP/1.1
+ Host: 127.0.0.1:23921
+ User-Agent: curl/7.77.0-DEV
+ Accept: */*
+ X-Forwarded-Proto: http
+ Via: 2 nghttpx
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 17
+ WE ROOLZ: 15688
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Last-Modified: Tue, 13 Jun 2000 12:10:00 GMT
+ ETag: "21025-dc7-39462498"
+ Accept-Ranges: bytes
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ Funny-head: yesyes
+ -foo-
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ -maa-
+=== End of file server.response
+=== Start of file stderr1700
+   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                  Dload  Upload   Total   Spent    Left  Speed
+ 
+   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ curl: (52) Empty reply from server
+   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                  Dload  Upload   Total   Spent    Left  Speed
+ 
+   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 100     6  100     6    0     0    123      0 --:--:-- --:--:-- --:--:--   162
+=== End of file stderr1700
+=== Start of file stdout1700
+ HTTP/1.1 101 Switching Protocols
+ Connection: Upgrade
+ Upgrade: h2c
+ HTTP/2 200 
+ date: Tue, 09 Nov 2010 14:49:00 GMT
+ content-length: 6
+ content-type: text/html
+ server: nghttpx
+ via: 1.1 nghttpx
+ -maa-
+=== End of file stdout1700
+=== Start of file trace1700
+ 12:14:20.525480 == Info:   Trying 127.0.0.1:23921...
+ 12:14:20.567961 == Info: Connected to 127.0.0.1 (127.0.0.1) port 23921 (#0)
+ 12:14:20.586830 => Send header, 180 bytes (0xb4)
+ 0000: GET /1700 HTTP/1.1
+ 0014: Host: 127.0.0.1:23921
+ 002b: User-Agent: curl/7.77.0-DEV
+ 0048: Accept: */*
+ 0055: Connection: Upgrade, HTTP2-Settings
+ 007a: Upgrade: h2c
+ 0088: HTTP2-Settings: AAMAAABkAAQCAAAAAAIAAAAA
+ 00b2: 
+ 12:14:20.602866 == Info: Mark bundle as not supporting multiuse
+ 12:14:20.606111 <= Recv header, 34 bytes (0x22)
+ 0000: HTTP/1.1 101 Switching Protocols
+ 12:14:20.611170 <= Recv header, 21 bytes (0x15)
+ 0000: Connection: Upgrade
+ 12:14:20.611825 <= Recv header, 14 bytes (0xe)
+ 0000: Upgrade: h2c
+ 12:14:20.612256 == Info: Received 101
+ 12:14:20.622847 == Info: Using HTTP2, server supports multi-use
+ 12:14:20.623214 == Info: Connection state changed (HTTP/2 confirmed)
+ 12:14:20.633714 == Info: Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=172
+ 12:14:20.699200 == Info: Empty reply from server
+ 12:14:20.704770 == Info: Connection #0 to host 127.0.0.1 left intact
+ 12:14:20.722167 == Info: Found bundle for host 127.0.0.1: 0x52b17b0 [can multiplex]
+ 12:14:20.728961 == Info: Re-using existing connection! (#0) with host 127.0.0.1
+ 12:14:20.730109 == Info: Connected to 127.0.0.1 (127.0.0.1) port 23921 (#0)
+ 12:14:20.740895 == Info: Using Stream ID: 3 (easy handle 0x52c86c0)
+ 12:14:20.755243 => Send header, 89 bytes (0x59)
+ 0000: GET /17000001 HTTP/2
+ 0016: Host: 127.0.0.1:23921
+ 002d: user-agent: curl/7.77.0-DEV
+ 004a: accept: */*
+ 0057: 
+ 12:14:20.760030 <= Recv header, 13 bytes (0xd)
+ 0000: HTTP/2 200 
+ 12:14:20.760548 <= Recv header, 37 bytes (0x25)
+ 0000: date: Tue, 09 Nov 2010 14:49:00 GMT
+ 12:14:20.761717 <= Recv header, 19 bytes (0x13)
+ 0000: content-length: 6
+ 12:14:20.762964 <= Recv header, 25 bytes (0x19)
+ 0000: content-type: text/html
+ 12:14:20.763158 <= Recv header, 17 bytes (0x11)
+ 0000: server: nghttpx
+ 12:14:20.763299 <= Recv header, 18 bytes (0x12)
+ 0000: via: 1.1 nghttpx
+ 12:14:20.764487 <= Recv header, 2 bytes (0x2)
+ 0000: 
+ 12:14:20.765634 <= Recv data, 6 bytes (0x6)
+ 0000: -maa-.
+ 12:14:20.769602 == Info: Connection #0 to host 127.0.0.1 left intact
+=== End of file trace1700
+
+Test suite total running time breakdown per task...
+
+Spent 0002.021 seconds starting and verifying test harness servers.
+Spent 0000.004 seconds reading definitions and doing test preparations.
+Spent 0001.407 seconds actually running test tools.
+Spent 0000.000 seconds awaiting server logs lock removal.
+Spent 0000.001 seconds verifying test results.
+Spent 0003.432 seconds doing all of the above.
+
+Test server starting and verification time per test (top 25)...
+
+-time-  test
+------  ----
+02.021  1700
+
+Test definition reading and preparation time per test (top 10)...
+
+-time-  test
+------  ----
+00.004  1700
+
+Test tool execution time per test (top 25)...
+
+-time-  test
+------  ----
+01.407  1700
+
+Test server logs lock removal time per test (top 15)...
+
+-time-  test
+------  ----
+00.000  1700
+
+Test results verification time per test (top 10)...
+
+-time-  test
+------  ----
+00.001  1700
+
+Total time per test (top 50)...
+
+-time-  test
+------  ----
+03.432  1700
+
+TESTDONE: 1 tests were considered during 3 seconds.
+TESTDONE: 0 tests out of 1 reported OK: 0%
+
+TESTFAIL: These test cases failed: 1700

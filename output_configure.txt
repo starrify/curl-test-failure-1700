@@ -1,0 +1,46 @@
+configure: Configured to build curl/libcurl:
+
+  Host setup:       x86_64-pc-linux-gnu
+  Install prefix:   /usr/local
+  Compiler:         gcc
+   CFLAGS:          -Werror-implicit-function-declaration -O2 -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wbad-function-cast -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wold-style-definition -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -ftree-vrp -Wdouble-promotion -Wformat=2 -Warray-bounds=2 -Wshift-negative-value -Wshift-overflow=2 -Wnull-dereference -fdelete-null-pointer-checks -Wduplicated-cond -Wunused-const-variable -Wduplicated-branches -Wrestrict -Walloc-zero -Wformat-overflow=2 -Wformat-truncation=2 -Wimplicit-fallthrough=4 -Wno-system-headers -pthread
+   CPPFLAGS:        
+   LDFLAGS:         
+   LIBS:            -lnghttp2 -lidn2 -lgsasl -lssl -lcrypto -lssl -lcrypto
+
+  curl version:     7.77.0-DEV
+  SSL:              enabled (OpenSSL)
+  SSH:              no      (--with-{libssh,libssh2})
+  zlib:             no      (--with-zlib)
+  brotli:           no      (--with-brotli)
+  zstd:             no      (--with-zstd)
+  GSS-API:          no      (--with-gssapi)
+  GSASL:            enabled
+  TLS-SRP:          enabled
+  resolver:         POSIX threaded
+  IPv6:             enabled
+  Unix sockets:     enabled
+  IDN:              enabled (libidn2)
+  Build libcurl:    Shared=yes, Static=yes
+  Built-in manual:  no      (--enable-manual)
+  --libcurl option: enabled (--disable-libcurl-option)
+  Verbose errors:   enabled (--disable-verbose)
+  Code coverage:    disabled
+  SSPI:             no      (--enable-sspi)
+  ca cert bundle:   /etc/ssl/certs/ca-certificates.crt
+  ca cert path:     no
+  ca fallback:      no
+  LDAP:             no      (--enable-ldap / --with-ldap-lib / --with-lber-lib)
+  LDAPS:            no      (--enable-ldaps)
+  RTSP:             enabled
+  RTMP:             no      (--with-librtmp)
+  Metalink:         no      (--with-libmetalink)
+  PSL:              no      (libpsl not found)
+  Alt-svc:          enabled (--disable-alt-svc)
+  HSTS:             enabled (--disable-hsts)
+  HTTP1:            enabled (internal)
+  HTTP2:            enabled (nghttp2)
+  HTTP3:            no      (--with-ngtcp2, --with-quiche)
+  ECH:              no      (--enable-ech)
+  Protocols:        DICT FILE FTP FTPS GOPHER GOPHERS HTTP HTTPS IMAP IMAPS MQTT POP3 POP3S RTSP SMB SMBS SMTP SMTPS TELNET TFTP
+  Features:         AsynchDNS GSASL HSTS HTTP2 HTTPS-proxy IDN IPv6 Largefile NTLM NTLM_WB SSL TLS-SRP UnixSockets alt-svc
