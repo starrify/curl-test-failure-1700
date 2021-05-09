@@ -1,0 +1,98 @@
+$ ../src/curl --include -v --trace-time http://127.0.0.1:23859/1700 --http2 http://127.0.0.1:23859/17000001
+11:44:44.184113 * STATE: INIT => CONNECT handle 0x55a3717c4b28; line 1753 (connection #-5000)
+11:44:44.184258 * Added connection 0. The cache now contains 1 members
+11:44:44.184326 * family0 == v4, family1 == v6
+11:44:44.184354 *   Trying 127.0.0.1:23859...
+11:44:44.184492 * STATE: CONNECT => CONNECTING handle 0x55a3717c4b28; line 1814 (connection #0)
+11:44:44.184548 * Connected to 127.0.0.1 (127.0.0.1) port 23859 (#0)
+11:44:44.184604 * STATE: CONNECTING => PROTOCONNECT handle 0x55a3717c4b28; line 1944 (connection #0)
+11:44:44.184668 * STATE: PROTOCONNECT => DO handle 0x55a3717c4b28; line 1967 (connection #0)
+11:44:44.184742 > GET /1700 HTTP/1.1
+11:44:44.184742 > Host: 127.0.0.1:23859
+11:44:44.184742 > User-Agent: curl/7.77.0-DEV
+11:44:44.184742 > Accept: */*
+11:44:44.184742 > Connection: Upgrade, HTTP2-Settings
+11:44:44.184742 > Upgrade: h2c
+11:44:44.184742 > HTTP2-Settings: AAMAAABkAAQCAAAAAAIAAAAA
+11:44:44.184742 > 
+11:44:44.185086 * STATE: DO => DID handle 0x55a3717c4b28; line 2041 (connection #0)
+11:44:44.185130 * STATE: DID => PERFORMING handle 0x55a3717c4b28; line 2160 (connection #0)
+11:44:44.185199 * Mark bundle as not supporting multiuse
+11:44:44.185243 * HTTP/2 found, allow multiplexing
+11:44:44.185270 < HTTP/1.1 101 Switching Protocols
+HTTP/1.1 101 Switching Protocols
+11:44:44.185303 < Connection: Upgrade
+Connection: Upgrade
+11:44:44.185337 < Upgrade: h2c
+Upgrade: h2c
+11:44:44.185369 * Received 101
+11:44:44.185421 * Using HTTP2, server supports multi-use
+11:44:44.185481 * Connection state changed (HTTP/2 confirmed)
+11:44:44.185528 * Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=27
+
+11:44:44.185652 * HTTP/2 found, allow multiplexing
+11:44:44.185686 < HTTP/2 200 
+HTTP/2 200 
+11:44:44.185719 < date: Tue, 09 Nov 2010 14:49:00 GMT
+date: Tue, 09 Nov 2010 14:49:00 GMT
+11:44:44.185749 < last-modified: Tue, 13 Jun 2000 12:10:00 GMT
+last-modified: Tue, 13 Jun 2000 12:10:00 GMT
+11:44:44.185782 < etag: "21025-dc7-39462498"
+etag: "21025-dc7-39462498"
+11:44:44.185813 < accept-ranges: bytes
+accept-ranges: bytes
+11:44:44.185843 < content-length: 6
+content-length: 6
+11:44:44.185874 < content-type: text/html
+content-type: text/html
+11:44:44.185906 < funny-head: yesyes
+funny-head: yesyes
+11:44:44.185938 < server: nghttpx
+server: nghttpx
+11:44:44.185970 < via: 1.1 nghttpx
+via: 1.1 nghttpx
+
+11:44:44.186006 < 
+-foo-
+11:44:44.186042 * nread == 0, stream closed, bailing
+11:44:44.186073 * STATE: PERFORMING => DONE handle 0x55a3717c4b28; line 2359 (connection #0)
+11:44:44.186102 * multi changed, check CONNECT_PEND queue!
+11:44:44.186156 * multi_done
+11:44:44.186187 * Connection #0 to host 127.0.0.1 left intact
+11:44:44.186217 * Expire cleared (transfer 0x55a3717c4b28)
+11:44:44.186321 * STATE: INIT => CONNECT handle 0x55a3717c5df8; line 1753 (connection #-5000)
+11:44:44.186387 * Found bundle for host 127.0.0.1: 0x55a3717bdd18 [can multiplex]
+11:44:44.186420 * 9 bytes stray data read before trying h2 connection
+11:44:44.186454 * Re-using existing connection! (#0) with host 127.0.0.1
+11:44:44.186484 * Connected to 127.0.0.1 (127.0.0.1) port 23859 (#0)
+11:44:44.186514 * STATE: CONNECT => DO handle 0x55a3717c5df8; line 1807 (connection #0)
+11:44:44.186569 * Using Stream ID: 3 (easy handle 0x55a3717c5df8)
+11:44:44.186633 > GET /17000001 HTTP/2
+11:44:44.186633 > Host: 127.0.0.1:23859
+11:44:44.186633 > user-agent: curl/7.77.0-DEV
+11:44:44.186633 > accept: */*
+11:44:44.186633 > 
+11:44:44.186823 * STATE: DO => DID handle 0x55a3717c5df8; line 2041 (connection #0)
+11:44:44.186855 * STATE: DID => PERFORMING handle 0x55a3717c5df8; line 2160 (connection #0)
+11:44:44.187211 * HTTP/2 found, allow multiplexing
+11:44:44.187249 < HTTP/2 200 
+HTTP/2 200 
+11:44:44.187295 < date: Tue, 09 Nov 2010 14:49:00 GMT
+date: Tue, 09 Nov 2010 14:49:00 GMT
+11:44:44.187326 < content-length: 6
+content-length: 6
+11:44:44.187356 < content-type: text/html
+content-type: text/html
+11:44:44.187387 < server: nghttpx
+server: nghttpx
+11:44:44.187416 < via: 1.1 nghttpx
+via: 1.1 nghttpx
+
+11:44:44.187448 < 
+-maa-
+11:44:44.187482 * nread == 0, stream closed, bailing
+11:44:44.187514 * STATE: PERFORMING => DONE handle 0x55a3717c5df8; line 2359 (connection #0)
+11:44:44.187541 * multi_done
+11:44:44.187571 * Connection #0 to host 127.0.0.1 left intact
+11:44:44.187606 * Expire cleared (transfer 0x55a3717c5df8)
+

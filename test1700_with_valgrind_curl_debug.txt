@@ -1,0 +1,74 @@
+$ ../libtool --mode=execute /usr/sbin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/valgrind1700 ../src/curl --include -v --trace-time http://127.0.0.1:23859/1700 --http2 http://127.0.0.1:23859/17000001
+11:45:00.138909 * STATE: INIT => CONNECT handle 0x57d1f18; line 1753 (connection #-5000)
+11:45:00.220635 * Added connection 0. The cache now contains 1 members
+11:45:00.236733 * family0 == v4, family1 == v6
+11:45:00.241371 *   Trying 127.0.0.1:23859...
+11:45:00.249088 * STATE: CONNECT => CONNECTING handle 0x57d1f18; line 1814 (connection #0)
+11:45:00.258767 * Connected to 127.0.0.1 (127.0.0.1) port 23859 (#0)
+11:45:00.259720 * STATE: CONNECTING => PROTOCONNECT handle 0x57d1f18; line 1944 (connection #0)
+11:45:00.262345 * STATE: PROTOCONNECT => DO handle 0x57d1f18; line 1967 (connection #0)
+11:45:00.285856 > GET /1700 HTTP/1.1
+11:45:00.285856 > Host: 127.0.0.1:23859
+11:45:00.285856 > User-Agent: curl/7.77.0-DEV
+11:45:00.285856 > Accept: */*
+11:45:00.285856 > Connection: Upgrade, HTTP2-Settings
+11:45:00.285856 > Upgrade: h2c
+11:45:00.285856 > HTTP2-Settings: AAMAAABkAAQCAAAAAAIAAAAA
+11:45:00.285856 > 
+11:45:00.291522 * STATE: DO => DID handle 0x57d1f18; line 2041 (connection #0)
+11:45:00.292550 * STATE: DID => PERFORMING handle 0x57d1f18; line 2160 (connection #0)
+11:45:00.306760 * Mark bundle as not supporting multiuse
+11:45:00.307669 * HTTP/2 found, allow multiplexing
+11:45:00.310735 < HTTP/1.1 101 Switching Protocols
+HTTP/1.1 101 Switching Protocols
+11:45:00.318529 < Connection: Upgrade
+Connection: Upgrade
+11:45:00.321074 < Upgrade: h2c
+Upgrade: h2c
+11:45:00.321941 * Received 101
+11:45:00.331864 * Using HTTP2, server supports multi-use
+11:45:00.332395 * Connection state changed (HTTP/2 confirmed)
+11:45:00.343409 * Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=172
+
+11:45:00.412177 * STATE: PERFORMING => DONE handle 0x57d1f18; line 2359 (connection #0)
+11:45:00.412655 * multi changed, check CONNECT_PEND queue!
+11:45:00.413784 * multi_done
+11:45:00.418142 * Empty reply from server
+11:45:00.425353 * Connection #0 to host 127.0.0.1 left intact
+11:45:00.428265 * Expire cleared (transfer 0x57d1f18)
+curl: (52) Empty reply from server
+11:45:00.449621 * STATE: INIT => CONNECT handle 0x5806178; line 1753 (connection #-5000)
+11:45:00.450929 * Found bundle for host 127.0.0.1: 0x57f15e8 [can multiplex]
+11:45:00.460109 * Re-using existing connection! (#0) with host 127.0.0.1
+11:45:00.461550 * Connected to 127.0.0.1 (127.0.0.1) port 23859 (#0)
+11:45:00.462085 * STATE: CONNECT => DO handle 0x5806178; line 1807 (connection #0)
+11:45:00.474733 * Using Stream ID: 3 (easy handle 0x5806178)
+11:45:00.489719 > GET /17000001 HTTP/2
+11:45:00.489719 > Host: 127.0.0.1:23859
+11:45:00.489719 > user-agent: curl/7.77.0-DEV
+11:45:00.489719 > accept: */*
+11:45:00.489719 > 
+11:45:00.491279 * STATE: DO => DID handle 0x5806178; line 2041 (connection #0)
+11:45:00.491690 * STATE: DID => PERFORMING handle 0x5806178; line 2160 (connection #0)
+11:45:00.495049 * HTTP/2 found, allow multiplexing
+11:45:00.495974 < HTTP/2 200 
+HTTP/2 200 
+11:45:00.496410 < date: Tue, 09 Nov 2010 14:49:00 GMT
+date: Tue, 09 Nov 2010 14:49:00 GMT
+11:45:00.498391 < content-length: 6
+content-length: 6
+11:45:00.501100 < content-type: text/html
+content-type: text/html
+11:45:00.501394 < server: nghttpx
+server: nghttpx
+11:45:00.501668 < via: 1.1 nghttpx
+via: 1.1 nghttpx
+
+11:45:00.503462 < 
+-maa-
+11:45:00.508606 * nread == 0, stream closed, bailing
+11:45:00.509076 * STATE: PERFORMING => DONE handle 0x5806178; line 2359 (connection #0)
+11:45:00.509308 * multi_done
+11:45:00.509804 * Connection #0 to host 127.0.0.1 left intact
+11:45:00.510127 * Expire cleared (transfer 0x5806178)
+
